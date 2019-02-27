@@ -12,7 +12,7 @@
                 <a href="{{ route('posts.single', $post->slug) }}">{{ $post->title }}</a>
             </h2>
             <div class="rte">
-                {!! $post->content !!}
+                {!! $post->excerpt !!}
                 <p class="readMore">
                     <a href="{{ route('posts.single', $post->slug) }}">Keep reading</a>
                 </p>

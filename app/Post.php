@@ -20,4 +20,9 @@ class Post extends Model
     {
         return 'slug';
     }
+
+    public function getExcerptAttribute()
+    {
+        return Str::limit(strip_tags($this->content), 300);
+    }
 }
