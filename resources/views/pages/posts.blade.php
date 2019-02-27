@@ -9,12 +9,12 @@
     <div class="postContent">
         <div class="wrapper">
             <h2 class="postTitle">
-                <a href="#">{{ $post->title }}</a>
+                <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
             </h2>
             <div class="rte">
                 {!! $post->content !!}
                 <p class="readMore">
-                    <a href="#">Keep reading</a>
+                    <a href="/posts/{{ $post->id }}">Keep reading</a>
                 </p>
             </div>
         </div>
@@ -41,8 +41,8 @@
 <article class="post formatPhoto">
     <figure class="postImage">
         <i class="postPremium fa fa-star"></i>
-        <a href="#">
-        <img src="{{ $post->image }}" alt="" class="mainPhoto">
+        <a href="/posts/{{ $post->id }}">
+            <img src="{{ $post->image }}" alt="" class="mainPhoto">
         </a>
         <div class="cover"
             style="background: url({{ $post->image }}) no-repeat;">

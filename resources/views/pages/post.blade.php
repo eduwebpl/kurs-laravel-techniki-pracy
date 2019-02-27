@@ -6,9 +6,7 @@
 <article class="post formatText">
     <div class="postContent">
         <div class="wrapper">
-            <h2 class="postTitle">
-                <a href="#">{{ $post->title }}</a>
-            </h2>
+            <h2 class="postTitle">{{ $post->title }}</h2>
             <div class="rte">
                 {!! $post->content !!}
             </div>
@@ -36,9 +34,7 @@
 <article class="post formatPhoto">
     <figure class="postImage">
         <i class="postPremium fa fa-star"></i>
-        <a href="#">
         <img src="{{ $post->image }}" alt="" class="mainPhoto">
-        </a>
         <div class="cover"
             style="background: url({{ $post->image }}) no-repeat;">
         </div>
