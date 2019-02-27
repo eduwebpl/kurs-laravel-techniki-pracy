@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PostController@index');
+Route::get('/posts/{id}', 'PostController@show');
 
 Route::get('/about-me', function () {
     return view('pages.about');
