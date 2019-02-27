@@ -16,7 +16,7 @@
                     <a href="#" class="logo">LaraBlogger</a>
                     <nav>
                         <ul>
-                            <li><a href="#">About me</a></li>
+                            <li><a href="/about-me">About me</a></li>
                             <li><a href="#">Login</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">RSS <i class="fa fa-rss-square"></i></a></li>

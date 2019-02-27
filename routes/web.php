@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('pages.posts');
 });
+
+Route::get('/about-me', function () {
+    return view('pages.about');
+});
