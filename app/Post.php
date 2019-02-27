@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 class Post extends Model
 {
     protected $guarded = [];
+    protected $dates = ['date'];
 
     public function setTitleAttribute($value)
     {
