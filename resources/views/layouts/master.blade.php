@@ -13,10 +13,10 @@
         <div class="container">
             <header class="mainHeader">
                 <div class="wrapper flex">
-                    <a href="#" class="logo">LaraBlogger</a>
+                    <a href="{{ url('/') }}" class="logo">LaraBlogger</a>
                     <nav>
                         <ul>
-                            <li><a href="/about-me">About me</a></li>
+                            <li><a href="{{ route('about') }}">About me</a></li>
                             <li><a href="#">Login</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">RSS <i class="fa fa-rss-square"></i></a></li>
@@ -34,16 +34,16 @@
             </section>
             <footer class="mainFooter">
                 <div class="wrapper">
-                    <p>&copy; 2019 LaraBlogger</p>
+                    <p>&copy; {{ date('Y') }} LaraBlogger</p>
                     <nav>
                         <ul>
-                            <li><a href="#">About me</a></li>
+                            <li><a href="{{ route('about') }}">About me</a></li>
                             <li><a href="#">Login</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">RSS</a></li>
                         </ul>
                     </nav>
-                    <p class="author">All rights reserved <a href="#">LaraBlogger</a></p>
+                    <p class="author">All rights reserved <a href="{{ url('/') }}">LaraBlogger</a></p>
                 </div>
             </footer>
         </div>
