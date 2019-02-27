@@ -16,7 +16,7 @@
                     <a href="{{ url('/') }}" class="logo">LaraBlogger</a>
                     <nav>
                         <ul>
-                            <li><a href="{{ route('about') }}">About me</a></li>
+                            <li><a href="{{ route('about') }}"{!! request()->routeIs('about') ? ' class="is-active"' : '' !!}>About me</a></li>
                             <li><a href="#">Login</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">RSS <i class="fa fa-rss-square"></i></a></li>
