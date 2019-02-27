@@ -8,9 +8,9 @@ use App\Post;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::latest('date')->get();
+        $posts = Post::latest('date')->paginate(3);
 
         return view('pages.posts', compact('posts'));
     }
