@@ -7,9 +7,11 @@
         <h1>Create new post</h1>
     </div>
 
-    <form action="#">
+    <form method="POST" action="{{ route('admin.post.create') }}">
+        @csrf
+
         <div class="form-fieldset">
-            <input class="form-field" type="title" name="text" placeholder="Title">
+            <input class="form-field" type="text" name="title" placeholder="Title">
         </div>
         <div class="form-fieldset">
             <div class="form-select">
@@ -36,14 +38,6 @@
             <textarea class="form-textarea" name="content" placeholder="Content"></textarea>
         </div>
         <button class="button">Add post</button>
-    </form>
-
-    <div class="rte mt">
-        <h1>Delete post</h1>
-    </div>
-
-    <form action="#">
-        <button class="button button--danger">Delete post</button>
     </form>
 </div>
 @endsection

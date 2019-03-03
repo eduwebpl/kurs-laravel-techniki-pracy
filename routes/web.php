@@ -34,3 +34,4 @@ Route::get('/email/verify', 'Auth\VerificationController@show')->name('verificat
 Route::get('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Route::get('/admin/post/create', 'Admin\PostController@create')->name('admin.post.create');
+Route::post('/admin/post/create', 'Admin\PostController@store');
