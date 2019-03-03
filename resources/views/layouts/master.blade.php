@@ -72,7 +72,7 @@
     </script>
     @endauth
 
-    <script src="{{ mix('/js/main.js') }}"></script>
+    @yield('footer_scripts')
 
     </body>
 </html>
