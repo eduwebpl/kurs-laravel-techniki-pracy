@@ -49,4 +49,15 @@ class LoginController extends Controller
     {
         session()->flash('message', "Hi {$user->name}, you've been logged in!");
     }
+
+    /**
+     * The user has logged out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function loggedOut(Request $request)
+    {
+        session()->flash('message', "You've been successfully logged out!");
+    }
 }
