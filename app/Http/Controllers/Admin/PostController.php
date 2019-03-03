@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -77,6 +78,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::findOrFail($id);
+        $oldImage = $post->image;
 
         $data = $this->validator($request->all())->validate();
 
@@ -86,6 +88,10 @@ class PostController extends Controller
         }
 
         $post->update($data);
+
+        if (isset($data['image'])) {
+            Storage::delete($oldImage);
+        }
 
         return back()->with('message', 'Post has been updated!');
     }
@@ -101,6 +107,8 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         $post->delete();
+
+        Storage::delete($post->image);
 
         return redirect('/')->with('message', 'Post has been deleted!');
     }

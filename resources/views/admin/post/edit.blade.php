@@ -37,6 +37,7 @@
                 <label class="form-label">Premium:</label>
                 <input type="checkbox" name="premium" value="1">
             </div>
+            <img src="{{ $post->photo }}" alt="" class="form-image">
             <div class="form-fieldset">
                 <label class="form-label">Image:</label>
                 <input type="file" name="image">
