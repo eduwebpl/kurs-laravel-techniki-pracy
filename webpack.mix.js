@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +11,18 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.disableNotifications();
+
+mix.browserSync({
+    port: 3002,
+    proxy: "larablogger.test",
+    open: false,
+    notify: false,
+});
+
+if (!mix.inProduction()) {
+    mix.webpackConfig({ devtool: "inline-source-map" }).sourceMaps();
+}
+
+mix.js("resources/js/main.js", "public/js").version();
+mix.sass("resources/sass/main.scss", "public/css").version();
