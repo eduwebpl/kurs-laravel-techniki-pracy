@@ -10,6 +10,7 @@
         <title>@yield('title', 'Home') - LaraBlogger</title>
     </head>
     <body class="page-index">
+        @include('partials.message')
         <div class="container">
             <header class="mainHeader">
                 <div class="wrapper flex">

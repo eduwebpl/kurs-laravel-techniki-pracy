@@ -10,10 +10,10 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <div class="form-fieldset">
-            <input class="form-field{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email" placeholder="Your e-mail">
+            <input class="form-field{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email" placeholder="Your e-mail" value="{{ old('email') }}">
         </div>
         <div class="form-fieldset">
-            <input class="form-field{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name" placeholder="Your name">
+            <input class="form-field{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name" placeholder="Your name" value="{{ old('name') }}">
         </div>
         <div class="form-fieldset">
             <input class="form-field{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" placeholder="Password">
