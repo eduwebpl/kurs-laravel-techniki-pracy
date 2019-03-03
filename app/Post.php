@@ -17,6 +17,11 @@ class Post extends Model
         $this->attributes['slug'] = Str::slug($value);
     }
 
+    public function setDateAttribute($value)
+    {
+        $this->attributes['date'] = is_null($value) ? now() : $value;
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';
