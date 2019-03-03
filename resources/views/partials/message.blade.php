@@ -8,3 +8,9 @@
 @if(session('message'))
 <div class="message">{{ session('message') }}</div>
 @endif
+@if(session('verified'))
+<div class="message">Your email has been verified!</div>
+@endif
+@if(session('resent'))
+<div class="message">Verification link has been sent to you!</div>
+@endif
