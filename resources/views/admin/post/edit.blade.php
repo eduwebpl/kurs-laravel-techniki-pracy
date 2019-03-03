@@ -46,6 +46,18 @@
             </div>
             <button class="button">Update</button>
         </form>
+
+        <div class="rte mt">
+            <h1>Delete post</h1>
+        </div>
+
+        <form method="POST" action="{{ route('admin.post.delete', $post->id) }}">
+            @csrf
+
+            {{ method_field('DELETE') }}
+
+            <button class="button button--danger" onclick="return confirm('Are you sure?')">Delete post</button>
+        </form>
     </div>
 </div>
 @endsection
