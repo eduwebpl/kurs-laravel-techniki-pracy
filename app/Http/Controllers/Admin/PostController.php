@@ -61,6 +61,8 @@ class PostController extends Controller
             $data['image'] = $path;
         }
 
+        $data['user_id'] = $request->user()->id;
+
         $post = Post::create($data);
 
         session()->flash('message', 'Post has been added!');

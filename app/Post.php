@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'type', 'date', 'content', 'published', 'premium', 'image'];
+    protected $fillable = ['user_id', 'title', 'type', 'date', 'content', 'published', 'premium', 'image'];
     protected $dates = ['date'];
 
     public function setTitleAttribute($value)
