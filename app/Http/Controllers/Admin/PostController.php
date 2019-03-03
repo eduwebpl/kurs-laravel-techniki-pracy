@@ -20,13 +20,20 @@ class PostController extends Controller
 
     protected function validator($data)
     {
-        return Validator::make($data, [
+        $validated = Validator::make($data, [
             'title' => 'required|max:255',
             'type' => 'required|in:text,photo',
             'date' => 'nullable|date',
             'image' => 'nullable|image|max:1024',
-            'content' => 'nullable'
-        ]);
+            'content' => 'nullable',
+            'published' => 'boolean',
+            'premium' => 'boolean'
+        ])->validate();
+
+        $validated = Arr::add($validated, 'published', 0);
+        $validated = Arr::add($validated, 'premium', 0);
+
+        return $validated;
     }
 
     /**
@@ -47,7 +54,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validator($request->all())->validate();
+        $data = $this->validator($request->all());
 
         if (isset($data['image'])) {
             $path = $request->file('image')->store('photos');
@@ -86,7 +93,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $oldImage = $post->image;
 
-        $data = $this->validator($request->all())->validate();
+        $data = $this->validator($request->all());
 
         if (isset($data['image'])) {
             $path = $request->file('image')->store('photos');
