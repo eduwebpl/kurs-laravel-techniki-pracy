@@ -37,4 +37,15 @@ class Post extends Model
     {
         return Str::startsWith($this->image, 'http') ? $this->image : Storage::url($this->image);
     }
+
+    public function scopePublished($query)
+    {
+        $user = auth()->user();
+
+        if ($user && $user->can('manage-posts')) {
+            return $query;
+        }
+
+        return $query->where('published', 1);
+    }
 }

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PostController@index');
-Route::get('/post/{post}', 'PostController@show')->name('posts.single');
+Route::get('/post/{slug}', 'PostController@show')->name('posts.single');
 
 Route::get('/about-me', function () {
     return view('pages.about');
