@@ -42,10 +42,10 @@
     <figure class="postImage">
         <i class="postPremium fa fa-star"></i>
         <a href="{{ route('posts.single', $post->slug) }}">
-            <img src="{{ $post->image }}" alt="" class="mainPhoto">
+            <img src="{{ $post->photo }}" alt="" class="mainPhoto">
         </a>
         <div class="cover"
-            style="background: url({{ $post->image }}) no-repeat;">
+            style="background: url({{ $post->photo }}) no-repeat;">
         </div>
     </figure>
     <div class="meta">
