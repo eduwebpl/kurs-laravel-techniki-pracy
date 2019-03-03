@@ -46,6 +46,10 @@ class Post extends Model
             return $query;
         }
 
+        if (!$user) {
+            $query->where('premium', '<>', 1);
+        }
+
         return $query->where('published', 1);
     }
 }

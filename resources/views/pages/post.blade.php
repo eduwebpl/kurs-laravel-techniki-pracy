@@ -6,6 +6,9 @@
 <article class="post formatText">
     <div class="postContent">
         <div class="wrapper">
+            @if($post->premium)
+            <i class="postPremium fa fa-star"></i>
+            @endif
             <h2 class="postTitle">{{ $post->title }}</h2>
             <div class="rte">
                 {!! $post->content !!}
@@ -35,7 +38,9 @@
 @elseif($post->type === 'photo')
 <article class="post formatPhoto">
     <figure class="postImage">
+        @if($post->premium)
         <i class="postPremium fa fa-star"></i>
+        @endif
         <img src="{{ $post->photo }}" alt="" class="mainPhoto">
         <div class="cover"
             style="background: url({{ $post->photo }}) no-repeat;">
