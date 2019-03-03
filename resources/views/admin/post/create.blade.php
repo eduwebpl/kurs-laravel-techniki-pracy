@@ -8,7 +8,7 @@
             <h1>Create new post</h1>
         </div>
 
-        <form method="POST" action="{{ route('admin.post.create') }}">
+        <form method="POST" action="{{ route('admin.post.create') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="form-fieldset">

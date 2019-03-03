@@ -17,7 +17,7 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'type' => 'required|in:text,photo',
             'date' => 'nullable|date',
-            'image' => 'nullable',
+            'image' => 'nullable|image|max:1024',
             'content' => 'nullable'
         ]);
     }
@@ -41,6 +41,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $this->validator($request->all())->validate();
+
+        if (isset($data['image'])) {
+            $path = $request->file('image')->store('photos');
+            $data['image'] = $path;
+        }
 
         $post = Post::create($data);
 
@@ -74,6 +79,11 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         $data = $this->validator($request->all())->validate();
+
+        if (isset($data['image'])) {
+            $path = $request->file('image')->store('photos');
+            $data['image'] = $path;
+        }
 
         $post->update($data);
 
