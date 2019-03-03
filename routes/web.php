@@ -32,3 +32,5 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('pass
 Route::get('/email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::get('/email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 Route::get('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+Route::get('/admin/post/create', 'Admin\PostController@create')->name('admin.post.create');
