@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::published()->latest('date')->paginate(3);
+        $posts = Post::published()->with(['tags', 'author'])->latest('date')->paginate(3);
 
         return view('pages.posts', compact('posts'));
     }
