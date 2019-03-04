@@ -1,3 +1,13 @@
-<p>Hi {{ $user->name }}!</p>
-<p>Thank you for registering on our blog!</p>
-<p>You have now access to all premium content on <a href="{{ url('/') }}">LaraBlogger</a>.</p>
+@component('mail::message')
+# Hi {{ $user->name }}!
+
+Thank you for registering on our blog!
+
+You have now access to all premium content on
+@component('mail::button', ['url' => url('/')])
+LaraBlogger
+@endcomponent
+
+Thanks,<br>
+{{ config('app.name') }}
+@endcomponent

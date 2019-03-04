@@ -32,6 +32,6 @@ class UserRegistered extends Mailable
     {
         return $this
             ->bcc(config('mail.admin.address'))
-            ->view('emails.registered');
+            ->markdown('emails.registered');
     }
 }
