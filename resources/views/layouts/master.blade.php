@@ -26,7 +26,7 @@
                             @can('manage-posts')
                             <li><a href="{{ route('admin.post.create') }}">Create</a></li>
                             @endcan
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ route('contact') }}"{!! request()->routeIs('contact') ? ' class="is-active"' : '' !!}>Contact</a></li>
                             <li><a href="{{ route('feeds.main') }}">RSS <i class="fa fa-rss-square"></i></a></li>
                         </ul>
                     </nav>
@@ -49,8 +49,8 @@
                             @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             @endguest
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">RSS</a></li>
+                            <li><a href="{{ route('contact') }}"{!! request()->routeIs('contact') ? ' class="is-active"' : '' !!}>Contact</a></li>
+                            <li><a href="{{ route('feeds.main') }}">RSS</a></li>
                         </ul>
                     </nav>
                     <p class="author">All rights reserved <a href="{{ url('/') }}">LaraBlogger</a></p>

@@ -48,3 +48,6 @@ Route::post('/comment/create', 'CommentController@store')->name('comment.create'
 
 Route::feeds();
 
+Route::get('/contact', 'ContactController@show')->name('contact');
+Route::post('/contact', 'ContactController@send');
+
