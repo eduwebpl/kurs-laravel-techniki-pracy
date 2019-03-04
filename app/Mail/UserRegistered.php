@@ -30,6 +30,8 @@ class UserRegistered extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.registered');
+        return $this
+            ->bcc(config('mail.admin.address'))
+            ->view('emails.registered');
     }
 }
