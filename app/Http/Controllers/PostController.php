@@ -12,6 +12,8 @@ class PostController extends Controller
     {
         $posts = Post::published()->latest('date')->paginate(3);
 
+        dump($posts->toArray());
+
         return view('pages.posts', compact('posts'));
     }
 
