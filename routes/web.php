@@ -25,8 +25,6 @@ Route::get('/about-me', function () {
     return view('pages.about');
 })->name('about');
 
-Auth::routes(['verify' => true]);
-
 Route::get('/account/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('/account/register', 'Auth\RegisterController@register');
 Route::get('/account/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -47,3 +45,6 @@ Route::put('/admin/post/{id}', 'Admin\PostController@update');
 Route::delete('/admin/post/{id}', 'Admin\PostController@destroy')->name('admin.post.delete');
 
 Route::post('/comment/create', 'CommentController@store')->name('comment.create');
+
+Route::feeds();
+

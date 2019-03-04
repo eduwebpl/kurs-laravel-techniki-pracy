@@ -27,7 +27,7 @@
                             <li><a href="{{ route('admin.post.create') }}">Create</a></li>
                             @endcan
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">RSS <i class="fa fa-rss-square"></i></a></li>
+                            <li><a href="{{ route('feeds.main') }}">RSS <i class="fa fa-rss-square"></i></a></li>
                         </ul>
                     </nav>
                     <form action="#" class="search">

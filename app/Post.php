@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class Post extends Model
+class Post extends Model implements Feedable
 {
     protected $fillable = ['user_id', 'title', 'type', 'date', 'content', 'published', 'premium', 'image'];
     protected $dates = ['date'];
@@ -66,5 +68,22 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function toFeedItem()
+    {
+        return FeedItem::create([
+            'id' => $this->id,
+            'title' => $this->title,
+            'summary' => $this->excerpt,
+            'updated' => $this->updated_at,
+            'link' => route('posts.single', $this->slug),
+            'author' => $this->author->name,
+        ]);
+    }
+
+    public static function getFeedItems()
+    {
+        return Post::published()->get();
     }
 }
