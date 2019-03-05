@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="none" onload="this.media='all'">
         <link rel="stylesheet" href="{{ mix('/css/main.css') }}">
-        <title>@yield('title', 'Home') - LaraBlogger</title>
+        <title>@yield('title', 'Home') - LaraBlogger v2</title>
     </head>
     <body class="page-index">
         @include('partials.message')
