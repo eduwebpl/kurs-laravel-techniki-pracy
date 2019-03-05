@@ -30,9 +30,9 @@
                             <li><a href="{{ route('feeds.main') }}">RSS <i class="fa fa-rss-square"></i></a></li>
                         </ul>
                     </nav>
-                    <form action="#" class="search">
+                    <form method="GET" action="{{ route('search') }}" class="search">
                         <div class="form-fieldset">
-                            <input type="text" class="form-field" placeholder="Search...">
+                            <input type="text" class="form-field" name="q" placeholder="Search..." value="{{ request()->get('q') }}">
                         </div>
                     </form>
                 </div>

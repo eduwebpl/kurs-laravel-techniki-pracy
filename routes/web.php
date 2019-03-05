@@ -51,3 +51,5 @@ Route::feeds();
 Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact', 'ContactController@send');
 
+Route::get('/search', 'SearchController@index')->name('search');
+
